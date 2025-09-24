@@ -2531,6 +2531,7 @@
         <value nybble="21-22" title="Movement ID 2" comment="Links with sprite 149."/>
     </sprite>
     <sprite id="391" name="Pivotal-rotation-controlled Crystal Block (Stone)">
+        <checkbox nybble="8" title="Ignore Model Rotation"/>
         <list nybble="10" title="Type" comment="* This is not cyrstalized. (Also unused.)">
             <entry value="0">3 x 2 Rectangle*</entry>
             <entry value="1">6 x 2 Rectangle</entry>
@@ -3621,4 +3622,15 @@
     <sprite id="199" name="Glow Block [UNUSED]" notes="Leftover from NSMBW.">
         <bitfield startbit="0" bitnum="0" title="&lt;font color=&quot;orange&quot; italic=&quot;true&quot;&gt;REQUIRES CUSTOM PATCH&lt;/font&gt;"/>
     </sprite>
+    <sprite id="305" name="Poltergeist item" notes="As soon as the player comes near this sprite, it flies up in the air and then shoots itself at the player's position.">
+        <value nybble="6" title="Unused Value 6"/>
+        <value nybble="7" title="Unused Value 7"/>
+        <value nybble="8-9" title="Activation Delay"/>
+        <list nybble="10-11" title="Activation Distance*" comment="The block is activated if the player is within this distance in any direction. *Any other value than 0 is the same as value 1.">
+            <entry value="0">7 Blocks</entry>
+            <entry value="1">2 Blocks</entry>
+        </list>
+        <checkbox nybble="12" title="Candlestick" comment="Any other value than 0 crashes the game, it's the 'Style' nybble from Wii."/>
+    </sprite>
+    <sprite id="310" name="Decorative Candlestick (NSMBW) [UNUSED]" notes="Supposed to load a poltergeist item. Unknown why it crashes."/>
 </sprites>
