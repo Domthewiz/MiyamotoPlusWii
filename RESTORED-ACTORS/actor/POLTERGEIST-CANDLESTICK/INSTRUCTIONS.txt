@@ -1,0 +1,1 @@
+Go into NSMBU's JyotyuActorPack.szs file, Find the poltergeist listing, and replace the .bfres
