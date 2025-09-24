@@ -2180,6 +2180,43 @@ class SpriteImage_PivotaBrick(SLib.SpriteImage_PivotRotationControlled):  # 522
         self.image = pix
         super().dataChanged()
 
+class SpriteImage_Poltergeist(SLib.SpriteImage_Static):  # 305
+    def __init__(self, parent):
+        super().__init__(
+            parent,
+            3.75,
+            ImageCache['Poltergeist'],
+        )
+
+    @staticmethod
+    def loadImages():
+        SLib.loadIfNotInImageCache('Poltergeist', 'poltergeist.png')
+        SLib.loadIfNotInImageCache('Candlestick', 'candlestick.png')
+
+    def dataChanged(self):
+
+        if self.parent.spritedata[5] & 1:
+            self.offset = (8, -16)
+            self.image = ImageCache['Candlestick']
+        else:
+            self.offset = (0, 0)
+            self.image = ImageCache['Poltergeist']
+
+        super().dataChanged()
+
+class SpriteImage_Candlestick(SLib.SpriteImage_Static):  # 305
+    def __init__(self, parent):
+        super().__init__(
+            parent,
+            3.75,
+            ImageCache['Candlestick'],
+            (8, -16),
+        )
+
+    @staticmethod
+    def loadImages():
+        SLib.loadIfNotInImageCache('Candlestick', 'candlestick.png')
+
 ImageClasses = {
     724: SpriteImage_ActorSpawner,
     748: SpriteImage_MassiveSpikedStake,
@@ -2254,4 +2291,6 @@ ImageClasses = {
     391: SpriteImage_GrayCrystal,
     190: SpriteImage_PivotaBlock,
     191: SpriteImage_PivotaBrick,
+    305: SpriteImage_Poltergeist,
+    310: SpriteImage_Candlestick,
 }
